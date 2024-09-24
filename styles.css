@@ -1,0 +1,106 @@
+body {
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(to bottom right, rgb(24, 28, 20), rgb(60, 61, 55), rgb(105, 117, 101) );
+    margin: 0px;
+    font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+    margin-bottom: 0px;
+}
+body img {
+    height: 50px;
+}
+
+header {
+    padding: 20px;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+}
+
+.chamada {
+    background-color: black;
+    padding: 1em;
+    color: rgb(255, 255, 255);
+    display: block;
+    text-decoration: none;
+    margin-bottom: 1em;
+    position: relative;
+    padding-bottom: 160px;
+    padding-top: 160px;
+    display: flex;
+    justify-content: center;
+    
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.chamada::after, .chamada:before{
+    
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), rgb(183, 218, 77), transparent 70%);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+.chamada:before{
+    filter: blur(1.5rem);
+    opacity: 0,5;
+}
+@keyframes spin{
+    from{
+        --angle: 0deg;   
+     }
+    to {
+        --angle: 360deg;
+    }
+}
+
+.chamada-texto {
+    margin-right: 5%;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.categoria-videos {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.categoria {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+}
+
+.categoria-videos img {
+    opacity: 0.5;
+    height: 200px;
+    filter: blur(0.1rem);
+}
+
+.categoria-videos img:hover {
+    opacity: 1.0;
+    border: 3px solid green;
+    filter: blur(0.0rem)
+}
+
+.categoria h2 {
+    color: rgb(255, 255, 255);
+}
